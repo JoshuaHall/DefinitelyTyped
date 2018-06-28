@@ -152,6 +152,7 @@ export function getStats(
     tag: string,
     callback: callbackFunc<StatsApiResponse>,
 ): void;
+
 export namespace owl {
     interface ApiResponse<T> {
         data: T;
