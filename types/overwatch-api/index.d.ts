@@ -123,10 +123,7 @@ export interface CompetitiveTopHeroData extends QuickplayTopHeroData {
 }
 
 export interface StatsCategories {
-    top_heroes: StatByGameType<
-        QuickplayTopHeroData,
-        CompetitiveTopHeroData
-    >;
+    top_heroes: StatByGameType<QuickplayTopHeroData, CompetitiveTopHeroData>;
     combat: StatsByGameType<Stat>;
     match_awards: StatsByGameType<Stat>;
     assists: StatsByGameType<Stat>;
@@ -140,18 +137,8 @@ export interface StatsApiResponse extends OverwatchApiResponse {
     stats: StatsCategories;
 }
 
-export function getProfile(
-    platform: OverwatchPlatform,
-    region: OverwatchServerRegion,
-    tag: string,
-    callback: callbackFunc<ProfileApiResponse>,
-): void;
-export function getStats(
-    platform: OverwatchPlatform,
-    region: OverwatchServerRegion,
-    tag: string,
-    callback: callbackFunc<StatsApiResponse>,
-): void;
+export function getProfile(platform: OverwatchPlatform, region: OverwatchServerRegion, tag: string, callback: callbackFunc<ProfileApiResponse>): void;
+export function getStats(platform: OverwatchPlatform, region: OverwatchServerRegion, tag: string, callback: callbackFunc<StatsApiResponse>): void;
 
 export namespace owl {
     interface ApiResponse<T> {
